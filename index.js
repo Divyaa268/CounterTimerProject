@@ -13,6 +13,10 @@ const day = 24 * hour;
 
 const timerFunction = () => {
 
+    const now = new Date();
+    let dd = String(now.getDate()).padStart(2, "0");
+    let mm = String(now.getMonth()+ 1).padStart(2,"0");
+
     setInterval(() => { 
 
         // setting the end day 
