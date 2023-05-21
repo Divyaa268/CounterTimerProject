@@ -3,6 +3,7 @@ const hoursElement = document.querySelector(".hours");
 const minutesElement = document.querySelector(".minutes");
 const secondsElement = document.querySelector(".seconds");
 const counterTimer = document.querySelector(".counterTimer");
+const heading = document.querySelector("h1");
 
 
 // calculating everything in millisecond
@@ -26,15 +27,16 @@ const timerFunction = () => {
 
     let targetDate = `${enteredMonth}/${enteredDay}/${yyyy}`;
 
+    // to check if date is from next year
     if(now > targetDate)
     {
         console.log(`${enteredMonth}/${enteredDay}/${yyyy+1}`);
         targetDate = `${enteredMonth}/${enteredDay}/${yyyy+1}`;
     }
 
-    setInterval(() => { 
+    const intervalId = setInterval(() => { 
 
-        // setting the end day 
+        // setting the end day and converting it to milliseconds
     const timer = new Date(targetDate).getTime();
 
     // setting the today's date 
@@ -47,14 +49,18 @@ const timerFunction = () => {
     const leftMinute = Math.floor((difference % hour) / minute);
     const leftSecond = Math.floor((difference % minute) / second);
 
+    // to show timer in DOM
     daysElement.innerText = leftDay;
     hoursElement.innerText =  leftHour;
     minutesElement.innerText = leftMinute;
     secondsElement.innerText = leftSecond;  
 
+    // When user gives date that is in past 
     if(difference < 0)
     {
         counterTimer.style.display = "none";
+        heading.innerText = "Time's up!";
+        clearInterval(intervalId); // to prevent time for running in case the time is negative value
 
     }
 
