@@ -1,3 +1,9 @@
+const daysElement = document.querySelector(".days");
+const hoursElement = document.querySelector(".hours");
+const minutesElement = document.querySelector(".minutes");
+const secondsElement = document.querySelector(".seconds");
+
+
 // calculating everything in millisecond
 const second = 1000;
 const minute = 60 * second;
@@ -22,8 +28,13 @@ const timerFunction = () => {
     const leftMinute = Math.floor((difference % hour) / minute);
     const leftSecond = Math.floor((difference % minute) / second);
 
+    daysElement.innerText = leftDay;
+    hoursElement.innerText =  leftHour;
+    minutesElement.innerText = leftMinute;
+    secondsElement.innerText = leftSecond;  
+
     console.log(`${leftDay}:${leftHour}:${leftMinute}:${leftSecond}`);
-    }, 1000);
+    }, 0);
 
 };
 
