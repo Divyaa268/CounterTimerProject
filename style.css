@@ -1,0 +1,46 @@
+*
+{
+    padding: 0%;
+    margin: 0%;
+    color: white;
+    
+
+}
+
+h1
+{
+    text-transform: uppercase;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.5rem;
+}
+
+.container
+{
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR99vCOZk3Ad0mIBY18KrBWEj0E0OtmD3mf-w&usqp=CAU");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-size: cover;
+}
+
+.counterTimer
+{
+    display: flex;
+}
+
+.counterTimer > p 
+{
+   
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.counterTimer > p > span
+{
+    display: block;
+    font-size: 4rem;
+
+}
